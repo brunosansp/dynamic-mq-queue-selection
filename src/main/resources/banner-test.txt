@@ -1,0 +1,16 @@
+	.___________. _______     _______.___________.
+	|           ||   ____|   /       |           |
+	`---|  |----`|  |__     |   (----`---|  |----`
+	    |  |     |   __|     \   \       |  |     
+	    |  |     |  |____.----)   |      |  |     
+	    |__|     |_______|_______/       |__|   
+	                                                                                                          
+	Application: ${spring.application.name} 
+	Version: ${spring.application.version}
+	ArtifactId: ${spring.application.artifactId}
+	Java: ${spring.application.java}
+	Port: ${server.port}
+	Context: ${server.servlet.context-path}
+	Ambiente: ${spring.ci.ambiente}
+	Secrets: ${spring.ci.secrets}
+	

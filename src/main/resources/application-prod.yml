@@ -1,0 +1,18 @@
+#Para testes utilizar o application-test.yml na pasta src/test
+spring:
+  banner:
+    location: classpath:/banner.txt
+  ci:
+    ambiente: ${AMBIENTE:esteira}
+    secrets: ${SECRETS:ci}
+ 
+# Utilizar porta 8443 para realizar o deploy na esteira DevSecOps HTTPS
+server:
+  port: 8443
+  servlet:
+    context-path: "/@project.artifactId@"
+    encoding:
+      charset: "@project.build.sourceEncoding@"
+  ssl:
+    certificate: ${CERT_SSL_PATH:certificate_nao_informado}
+    certificate-private-key: ${KEY_SSL_PATH:private-key_nao_informado}

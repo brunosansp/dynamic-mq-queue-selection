@@ -1,0 +1,22 @@
+#######################################################
+# ESTE APPLICATION E APENAS PARA DEFINICOES GERAIS    #
+#######################################################
+#Para testes unitarios e recomendavel utilizar o application-test.yml com mock
+#Para esteira utilizar o application-prod.yml
+#Nao e permitido inserir credenciais, utilize variaveis BSAD5
+spring:
+  profiles:
+    active: ${PROFILE:prod}
+  application:
+    name: "@project.name@"
+    version: "@project.version@"
+    description: "@project.description@"
+    groupId: "@project.groupId@"
+    artifactId: "@project.artifactId@"
+    java: "@java.version@"
+ 
+logging:
+  file:
+    name: "/var/log/@project.artifactId@/@project.artifactId@.log"
+  level:
+    root: INFO

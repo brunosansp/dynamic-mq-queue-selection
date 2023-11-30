@@ -1,0 +1,37 @@
+spring:
+  banner:
+    location: classpath:/banner-test.txt
+  ci:
+    ambiente: "TESTE"
+    secrets: "test"
+
+# Utilizar porta 8080 para realizar os testes na esteira DevSecOps
+server:
+  port: 8080
+  servlet:
+    context-path: "/@project.artifactId@"
+
+logging:
+  file:
+    name: "/var/log/@project.artifactId@/@project.artifactId@.log"
+  level:
+    root: INFO
+
+ibm:
+  mq:
+    queueManager: ${IBM_MQ_QUEUE_MANAGER:QM1}
+    connName: ${IBM_MQ_CONNECTION:127.0.0.1}
+    port: ${IBM_MQ_PORT:1414}
+    channel: ${IBM_MQ_CHANNEL:DEV.ADMIN.SVRCONN}
+    user: "admin"
+    password: "passw0rd"
+    # Filas desenvolvimento local
+    queueNameRequest: "DEV.QUEUE.1"
+    queueNameResponse: "DEV.QUEUE.1"
+    # Filas serviços
+    queueNameRequestSalvar: "FR.SALVAR.REQ"
+    queueNameResponseSalvar: "FL.SALVAR.RSP"
+    queueNameRequestSimular: "FR.SIMULAR.REQ"
+    queueNameResponseSimular: "FL.SIMULAR.RSP"
+    queueNameRequestDetalha: "FR.DETALHA.REQ"
+    queueNameResponseDetalha: "FL.DETALHA.RSP"
